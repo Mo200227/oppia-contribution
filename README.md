@@ -1,54 +1,34 @@
-# Contribution #1: Add field for developer-supplied notes for feature flags
+# Contribution #1: docs: Identify and clean up references to broken or unmaintained plugins
 
 **Contribution Number:** 1
 **Student:** Mo200227
-**Issue:** https://github.com/oppia/oppia/issues/19610
+**Issue:** https://github.com/beetbox/beets/issues/5780
 **Status:** Phase I Complete
 
 ---
 
 ## Why I Chose This Issue
 
-I chose this issue because it involves Python backend work, which aligns with 
-my programming experience from CS1302. The task is well-scoped and clearly 
-defined: add a `developer_notes` field to the feature flag specification in 
-the Oppia codebase and display it in the Release Coordinator UI.
+I chose this issue because it is well-scoped and clearly defined — audit the beets plugin documentation, identify broken or unmaintained plugins, and clean up the docs accordingly. The task matches my current skill level since it involves reading documentation and Python codebases rather than complex new feature development.
 
-I'm interested in this issue because it involves both backend (Python) and 
-frontend (HTML/TypeScript) work, giving me exposure to a full-stack change 
-in a real production codebase. The issue has detailed comments from previous 
-contributors showing exactly which files need to change, which will help me 
-navigate an unfamiliar codebase for the first time.
+The issue has an active maintainer and a helpful starting list of plugins already provided in the comments. This gives me a clear roadmap for where to begin. I also want to build familiarity with reading an established Python codebase, and beets is a well-structured project that will help me develop that skill.
 
 ---
 
 ## Understanding the Issue
 
 ### Problem Description
-
-The Oppia platform has "feature flags" that developers can toggle on/off 
-in the Release Coordinator page. Currently, there is no way for developers 
-to leave notes for admins explaining what a flag does or what steps to take 
-when toggling it.
+The beets documentation references many plugins, some of which are outdated, unmaintained, or no longer functional. This confuses users trying to find reliable tools.
 
 ### Expected Behavior
-
-Each feature flag should have an optional `developer_notes` field that is 
-hardcoded by developers in the backend. When this field is non-empty, it 
-should be displayed in the Release Coordinator UI so admins can see 
-important instructions.
+The plugin documentation should only reference actively maintained plugins, with dead links removed and the sidebar reorganized into categories.
 
 ### Current Behavior
-
-Feature flags have no notes field. Admins have no way to know if special 
-steps are required when toggling a flag.
+The docs have a long alphabetical list of plugins including deprecated ones like `acousticbrainz` whose upstream service was shut down.
 
 ### Affected Components
-
-- `core/domain/feature_flag_domain.py` — add `developer_notes` to FeatureFlagSpec
-- `core/templates/pages/release-coordinator-page/features-tab/features-tab.component.html` — display notes in UI
-- `core/templates/pages/release-coordinator-page/features-tab/features-tab.component.ts` — update component logic
-- Related test files
+- `docs/` folder — plugin documentation pages
+- Plugin sidebar/index pages
 
 ---
 
@@ -90,5 +70,5 @@ steps are required when toggling a flag.
 
 ## Resources Used
 
-- Issue thread: https://github.com/oppia/oppia/issues/19610
-- Oppia contributing wiki: https://github.com/oppia/oppia/wiki/Contributing-code-to-Oppia
+- Issue thread: https://github.com/beetbox/beets/issues/5780
+- Beets contributing guide: https://github.com/beetbox/beets/blob/master/CONTRIBUTING.rst
